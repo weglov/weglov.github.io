@@ -19919,7 +19919,7 @@ module.exports = function(vars) {
     prev = d3.select(prev);
   }
   vars.container.x = vars.x.value || parseFloat(elem.attr("x"), 10);
-  vars.container.y = vars.y.value || parseFloat(elem.attr("y"), 10);
+  vars.container.y = vars.container.y = vars.y.value < -100 ? 0 : vars.y.value;
   if (prev) {
     if (vars.shape.accepted.indexOf(shape) >= 0) {
       vars.self.shape(shape);
@@ -22544,7 +22544,7 @@ module.exports = function(vars, selection, enter, exit) {
             w: rect[0].width,
             h: rect[0].height,
             x: rect[0].cx,
-            y: 0
+            y: rect[0].cy
           };
         } else {
           delete d.d3plus_label;
