@@ -22544,7 +22544,7 @@ module.exports = function(vars, selection, enter, exit) {
             w: rect[0].width,
             h: rect[0].height,
             x: rect[0].cx,
-            y: rect[0].cy
+            y: 0
           };
         } else {
           delete d.d3plus_label;
